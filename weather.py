@@ -12,7 +12,7 @@ def get_daylight_temperature(date, dataset):
     dataset -- relative filepath of the dataset
     '''
     # the csv is read by the pandas library into a pandas dataframe
-    data = pandas.read_csv(dataset)
+    data = pandas.read_csv(dataset).dropna(axis=1, how='all')
     # midday and noon times are constructed for the given date
     day_begin = pandas.Timestamp(date).replace(hour=0, minute=0, second=0, microsecond=0)
     day_end = day_begin + pandas.offsets.Day(1)
@@ -49,10 +49,10 @@ def get_sub40F_wind_chill(date, dataset):
     date -- date string the windchill index will be evaluated for
     dataset -- relative filepath of the dataset the windchill will be extracted from
     '''
-    only_sub40F = (lambda value: value < 40)
+    only_sub40F = (lambda temperature_value: temperature_value < 40)
     return int(round(weather_util.get_wind_chill(only_sub40F, date, dataset)))
 
-def get_most_similar_day(dataset_a, dataset_b):
+def get_most_similar_date(dataset_a, dataset_b):
     '''
     Takes two datasets and returns the day in which the conditions
     were similar between both datasets according to the similarity metric
