@@ -1,7 +1,6 @@
 # WeatherTest
-# Read Me
 
-# Requirements
+## Requirements
 Python >=2.7.9 and the Python Pandas module are required to use this library.
 To install python >=2.7.9, visit
 https://www.python.org/download/releases/2.7/
@@ -13,7 +12,7 @@ To run, clone the repository or unzip the .zip distribution of this repository.
 The test can be run from their respective folders relatively, otherwise the project should be treated as a simple python module.
 The provided test/examples present the usage of this library, with the user functionality being provided by get_daylight_temperature, get_sub40F_wind_chill, and get_most_similar_day in the weather.py file.
 
-# Similarity metric
+## Similarity metric
 The reasoning behind the chosen similarity metric.
 In developing a similarity metric, I chose to use columns that were not sparsely populated.
 If those columns were used when variables were not present, there would be days that similarity could not be calculated.
@@ -24,5 +23,5 @@ Altimeter Setting was used over station pressure because it reads at a mean sea 
 The formulation for the similarity index is currently
 (WindchillTemperatureF^2 + DryBulbTemperatureF^2 + WetBulbTemperatureF^2 + DewPointTemperatureF^2 + AltimeterSetting^2)^.5
 
-# Results
+## Results
 With current files, results for most similar date should be "02/19/17"
