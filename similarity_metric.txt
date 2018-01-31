@@ -1,0 +1,9 @@
+The reasoning behind the chosen similarity metric.
+In developing a similarity metric, I chose to use columns that were not sparsely populated.
+If those columns were used when variables were not present, there would be days that similarity could not be calculated.
+The name of the station and location information(longitude / latitude / elevation) do not offer much in explaining the variance for environmental conditions, so they were not considered for this metric.
+Wind speed is represented by the day's windchill, this prevents the Euclidean distance measure from placing too much importance on wind conditions while accounting for what a human would perceive as a similar day.
+Humidity is represented by the dew point temperature instead of the relative humidity because the dew point temperature is absolute, captures humidity in its definition, and is on a similar scale to most of the other variables selected for the similarity metric.
+Altimeter Setting was used over station pressure because it reads at a mean sea level, unlike station pressure.
+The formulation for the similarity index is currently
+(WindchillTemperatureF^2 + DryBulbTemperatureF^2 + WetBulbTemperatureF^2 + DewPointTemperatureF^2 + AltimeterSetting^2)^.5
