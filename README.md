@@ -6,7 +6,7 @@ To install python >=2.7.9, visit
 https://www.python.org/download/releases/2.7/
 
 After having the Python 2.x distribution installed, you can install the Pandas module by running this command in the Python home directory
-<<<<<<< HEAD
+
 ``` bash
 python -m pip install pandas
 ```
@@ -36,4 +36,3 @@ The formulation for the similarity index is currently
 ```
 ## Results
 With current files, results for most similar date should be "02/19/17"
->>>>>>> 77072276e0b83e2e2d5c2aec22230ab44c412562
