@@ -10,6 +10,7 @@ After having the Python 2.x distribution installed, you can install the Pandas m
 python -m pip install pandas
 ```
 or by following the pandas installation instructions here http://pandas.pydata.org/pandas-docs/stable/install.html.
+
 To run, clone the repository or unzip the .zip distribution of this repository.
 The test can be run from their respective folders relatively, otherwise the project should be treated as a simple python module.
 The provided test/examples present the usage of this library, with the user functionality being provided by **get_daylight_temperature**, **get_sub40F_wind_chill**, and **get_most_similar_day** in the *weather.py file*.
